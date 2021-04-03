@@ -21,7 +21,12 @@ API de cocktails pour retrouver vos recettes préférés. Il est également poss
 
 <mcd>
 
-COCKTAILS ( name, alcoholic, ingredients, instructions, glass, pictures )
-INGREDIENTS ( name, type, name.1 )
-USER ( email, firstname, lastname, mot de passe )
+COCKTAILS ( name, ingredients, instructions, glass, pictures )
+
+CONTIENT ( name, name.1 )
+
+INGREDIENTS ( name, type )
+
+USER ( email, firstname, lastname, password )
+
 CONSULTE/RAJOUTE ( name, email )
