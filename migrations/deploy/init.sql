@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS "cocktails" (
 CREATE TABLE IF NOT EXISTS "ingredients" (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "name" text NOT NULL,
-  "type" text NOT NULL
+  "type" text
 );
 
 -- -----------------------------------------------------
