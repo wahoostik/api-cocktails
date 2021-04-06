@@ -1,0 +1,147 @@
+@protocol= http
+@domainname= localhost
+@port= {{$dotenv PORT}}
+@baseUrl = {{protocol}}://{{domainname}}:{{port}}
+
+### Route GET /cocktails
+
+GET {{baseUrl}}/cocktails
+
+### Route GET /cocktails/:id
+
+GET {{baseUrl}}/cocktails/7
+
+### Route POST /cocktails
+
+POST {{baseUrl}}/cocktails
+Content-type: application/json
+
+{
+    "name": "Tequila Sunrise",
+    "ingredients": "Tequila, Jus d'orange, Sirop de grenadine, Glaçons",
+    "instructions": "Dans un verre long drink rempli de glaçons, versez dans l’ordre 4 cl de tequila et 8 cl de jus d’orange.\nRemuez doucement. Versez lentement 2 cl de sirop de grenadine en vérifiant que le sirop tombe bien au fond du verre.\nDonnez un petit coup de cuillère à cocktail pour créer un joli dégradé typique de la Tequila Sunrise.",
+    "glass": "Verre à cocktail",
+    "picturesLink": "https://www.destinationcocktails.fr/wp-content/uploads/2019/11/cocktail-tequila-sunrise.jpg",
+    "alcoolTagId": 8
+}
+
+### Route POST /cocktails
+
+POST {{baseUrl}}/cocktails
+Content-type: application/json
+
+{
+    "name": "Margarita",
+    "ingredients": "Tequila, Triple sec, Jus de citron vert pressée, Glace pilée",
+    "instructions": "Dans un shaker rempli à moitié de glace pilée, versez 4 cl de tequila, 2 cl de triple sec et 2 cl de jus de citron vert pressé.\nSecouez énergiquement pendant quelques secondes.\nFiltrez votre préparation à l’aide d’une passoire à cocktail afin de retenir les glaçons.",
+    "glass": "Verre à cocktail",
+    "picturesLink": "https://www.destinationcocktails.fr/wp-content/uploads/2019/11/cocktail-margarita.jpg",
+    "alcoolTagId": 8
+}
+
+### Route DELETE /cocktails
+DELETE {{baseUrl}}/cocktails/6
+
+### Route POST /cocktails
+
+PATCH {{baseUrl}}/cocktails/7
+Content-type: application/json
+
+{
+    "glass": "Verre à cocktail ou tout type de grand verre"
+}
+
+### Route GET /alcool
+
+GET {{baseUrl}}/alcool
+
+### Route GET /alcool/:id
+
+GET {{baseUrl}}/alcool/6
+
+### Route POST /alcool
+
+POST {{baseUrl}}/alcool
+Content-type: application/json
+
+{
+    "name": "Gin"
+}
+
+### Route DELETE /cocktails
+DELETE {{baseUrl}}/alcool/9
+
+### Route POST /cocktails
+
+PATCH {{baseUrl}}/alcool/10
+Content-type: application/json
+
+{
+    "name": "Gin Tonic"
+}
+
+### Route POST /register
+
+POST {{baseUrl}}/register
+Content-type: application/json
+
+{
+    "email": "jeanlucIIIleretour@gmail.com",
+    "firstname": "Jean-Luc",
+    "lastname": "III le retour",
+    "password": "lemotdepasseA10"
+}
+
+### Route POST /login
+
+POST {{baseUrl}}/login
+Content-type: application/json
+
+{
+    "email": "jeanlucIIIleretour@gmail.com",
+    "password": "lemotdepasseA10"
+}
+
+### Route DELETE /settings/delete/:id
+
+DELETE {{baseUrl}}/settings/delete/3
+{
+    "password": "lemotdepasseA10"
+}
+
+### Route PATCH /user/:id
+
+PATCH {{baseUrl}}/settings/email/3
+Content-type: application/json
+
+{
+    "email": "jeanlucIVleretour@gmail.com",
+    "password": "lemotdepasseA10"
+}
+
+### Route PATCH /user/:id
+
+PATCH {{baseUrl}}/settings/user/3
+Content-type: application/json
+
+{
+    "firstname": "Walter",
+    "lastname": "White",
+    "password": "lemotdepasseA10",
+    "newPassword": "heisenbergBB2021"
+
+}
+
+### Route GET /settings/cocktail/:id
+
+GET {{baseUrl}}/settings/cocktail/3
+
+### Route PUT /settings/cocktail
+
+POST {{baseUrl}}/settings/cocktail
+Content-type: application/json
+
+{
+    "userId": 4,
+    "cocktailsId": 5
+}
