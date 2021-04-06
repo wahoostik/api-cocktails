@@ -25,6 +25,20 @@ Content-type: application/json
     "alcoolTagId": 8
 }
 
+### Route POST /cocktails
+
+POST {{baseUrl}}/cocktails
+Content-type: application/json
+
+{
+    "name": "Margarita",
+    "ingredients": "Tequila, Triple sec, Jus de citron vert pressée, Glace pilée",
+    "instructions": "Dans un shaker rempli à moitié de glace pilée, versez 4 cl de tequila, 2 cl de triple sec et 2 cl de jus de citron vert pressé.\nSecouez énergiquement pendant quelques secondes.\nFiltrez votre préparation à l’aide d’une passoire à cocktail afin de retenir les glaçons.",
+    "glass": "Verre à cocktail",
+    "picturesLink": "https://www.destinationcocktails.fr/wp-content/uploads/2019/11/cocktail-margarita.jpg",
+    "alcoolTagId": 8
+}
+
 ### Route DELETE /cocktails
 DELETE {{baseUrl}}/cocktails/6
 
@@ -116,4 +130,18 @@ Content-type: application/json
     "password": "lemotdepasseA10",
     "newPassword": "heisenbergBB2021"
 
+}
+
+### Route GET /settings/cocktail/:id
+
+GET {{baseUrl}}/settings/cocktail/3
+
+### Route PUT /settings/cocktail
+
+POST {{baseUrl}}/settings/cocktail
+Content-type: application/json
+
+{
+    "userId": 4,
+    "cocktailsId": 5
 }

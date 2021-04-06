@@ -58,6 +58,9 @@ INSERT INTO "user" ("email", "firstname", "lastname", "password") VALUES
 
 
 INSERT INTO "user_made_cocktails" ("user_id", "cocktails_id") VALUES
-(1, 1);
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4);
 
 COMMIT;
