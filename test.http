@@ -36,3 +36,84 @@ Content-type: application/json
 {
     "glass": "Verre à cocktail ou tout type de grand verre"
 }
+
+### Route GET /alcool
+
+GET {{baseUrl}}/alcool
+
+### Route GET /alcool/:id
+
+GET {{baseUrl}}/alcool/6
+
+### Route POST /alcool
+
+POST {{baseUrl}}/alcool
+Content-type: application/json
+
+{
+    "name": "Gin"
+}
+
+### Route DELETE /cocktails
+DELETE {{baseUrl}}/alcool/9
+
+### Route POST /cocktails
+
+PATCH {{baseUrl}}/alcool/10
+Content-type: application/json
+
+{
+    "name": "Gin Tonic"
+}
+
+### Route POST /register
+
+POST {{baseUrl}}/register
+Content-type: application/json
+
+{
+    "email": "jeanlucIIIleretour@gmail.com",
+    "firstname": "Jean-Luc",
+    "lastname": "III le retour",
+    "password": "lemotdepasseA10"
+}
+
+### Route POST /login
+
+POST {{baseUrl}}/login
+Content-type: application/json
+
+{
+    "email": "jeanlucIIIleretour@gmail.com",
+    "password": "lemotdepasseA10"
+}
+
+### Route DELETE /settings/delete/:id
+
+DELETE {{baseUrl}}/settings/delete/3
+{
+    "password": "lemotdepasseA10"
+}
+
+### Route PATCH /user/:id
+
+PATCH {{baseUrl}}/settings/email/3
+Content-type: application/json
+
+{
+    "email": "jeanlucIVleretour@gmail.com",
+    "password": "lemotdepasseA10"
+}
+
+### Route PATCH /user/:id
+
+PATCH {{baseUrl}}/settings/user/3
+Content-type: application/json
+
+{
+    "firstname": "Walter",
+    "lastname": "White",
+    "password": "lemotdepasseA10",
+    "newPassword": "heisenbergBB2021"
+
+}

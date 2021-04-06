@@ -4,6 +4,7 @@ const router = Router();
 //on importe nos controllers
 const cocktailController = require('./controllers/cocktailController');
 const alcoolTagController = require('./controllers/alcoolTagController');
+const userController = require('./controllers/userController')
 
 // Page d'accueil
 router.get('/', (request, response) => {
@@ -23,5 +24,12 @@ router.get('/alcool/:id', alcoolTagController.alcoolTagById);
 router.post('/alcool', alcoolTagController.addAlcoolTag); 
 router.delete('/alcool/:id', alcoolTagController.deleteTag); 
 router.patch('/alcool/:id', alcoolTagController.modifyAlcoolTag);
+
+// Routes Login, Register
+router.post('/login', userController.login);
+router.patch('/settings/user/:id', userController.modifyUserData);
+router.patch('/settings/email/:id', userController.modifyUserEmail);
+router.delete('/settings/delete/:id', userController.deleteUser);
+router.post('/register', userController.signupForm);
 
 module.exports = router;
