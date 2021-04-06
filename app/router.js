@@ -7,6 +7,12 @@ const alcoolTagController = require('./controllers/alcoolTagController');
 const userController = require('./controllers/userController');
 const userMadeCocktailController= require('./controllers/userMadeCocktails');
 
+//on importe les validateurs 'Joi'
+const { validateBody } = require('./services/validator');
+const loginSchema = require ('./schemas/login');
+const registerSchema = require ('./schemas/register');
+const modifyDataSchema = require ('./schemas/modifyData');
+const modifyEmailSchema = require ('./schemas/modifyEmail');
 
 // Page d'accueil
 router.get('/', (request, response) => {
@@ -28,11 +34,11 @@ router.delete('/alcool/:id', alcoolTagController.deleteTag);
 router.patch('/alcool/:id', alcoolTagController.modifyAlcoolTag);
 
 // Routes Login, Register
-router.post('/login', userController.login);
-router.patch('/settings/user/:id', userController.modifyUserData);
-router.patch('/settings/email/:id', userController.modifyUserEmail);
+router.post('/login', validateBody(loginSchema), userController.login);
+router.patch('/settings/user/:id', validateBody(modifyDataSchema), userController.modifyUserData);
+router.patch('/settings/email/:id', validateBody(modifyEmailSchema), userController.modifyUserEmail);
 router.delete('/settings/delete/:id', userController.deleteUser);
-router.post('/register', userController.signupForm);
+router.post('/register', validateBody(registerSchema), userController.signupForm);
 router.get('/settings/cocktail/:id', userMadeCocktailController.userCocktailById);
 
 module.exports = router;
