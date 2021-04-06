@@ -5,7 +5,7 @@ class IngredientsInCocktail {
     //camelCase ici, snake_case côté BDD
     id;
     cocktailId;
-    ingredientsId;
+    alcoolTagId;
 
 
     //setters
@@ -13,8 +13,8 @@ class IngredientsInCocktail {
         this.cocktailId = val;
     }
 
-    set ingredients_id(val) {
-        this.ingredientsId = val;
+    set alcool_tag_id(val) {
+        this.alcoolTagId = val;
     }
 
 
