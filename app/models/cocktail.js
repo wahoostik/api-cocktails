@@ -39,7 +39,25 @@ class Cocktail {
         const { rows } = await db.query(`SELECT * FROM "cocktails" WHERE "id" = $1;`, [id]);
 
         return new Cocktail(rows[0]);
+    }
 
+    // pas statique car propre à chaque instance
+    async createCocktail() {
+        // props de this => insérer une ligne dans la bdd
+        const { rows } = await db.query(`INSERT INTO cocktails (name, ingredients, instructions, glass, pictures_link)
+        VALUES ($1, $2, $3, $4, $5) RETURNING id;`,
+        [this.name, this.ingredients, this.instructions, this.glass,this.picturesLink]);
+
+        this.id = rows[0].id;
+    }
+
+    async deleteCocktail() {
+        const { rows } = await db.query(`DELETE FROM cocktails WHERE id = $1;`, [this.id]);
+    }
+
+    async modifyCocktail() {
+        const { rows } = await db.query(`UPDATE cocktails SET name = $2, ingredients = $3, instructions = $4, glass = $5, pictures_link = $6
+        WHERE id = $1;`, [this.id, this.name, this.ingredients, this.instructions, this.glass, this.picturesLink]);
     }
 
 

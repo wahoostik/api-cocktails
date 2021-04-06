@@ -1,7 +1,7 @@
 // Modèle Active Record
 const db = require('../database.js');
 
-class IngredientsInCocktail {
+class AlcoolInCocktail {
     //camelCase ici, snake_case côté BDD
     id;
     cocktailId;
@@ -28,4 +28,4 @@ class IngredientsInCocktail {
 
 }
 
-module.exports = IngredientsInCocktail;
+module.exports = AlcoolInCocktail;
