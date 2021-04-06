@@ -19,6 +19,6 @@ API de cocktails pour retrouver vos recettes préférés. Il est également poss
 
 ## Structure des données
 
-- COCKTAILS ( name, instructions, glass, pictures )
-- INGREDIENTS ( name, type )
+- COCKTAILS ( name, ingredients, instructions, glass, pictures, alcool_tag )
+- ALCOOL TAG ( name)
 - USER ( email, firstname, lastname, password )

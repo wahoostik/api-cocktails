@@ -10,7 +10,6 @@ const cocktailController = {
             console.log(cocktails);
             response.json(cocktails);
         } catch (error) {
-            //si la page n'existe pas
             response.status(404).json(error.message);
             console.log("Erreur dans le cocktail controller : ", error);
         }
@@ -18,7 +17,7 @@ const cocktailController = {
 
     cocktailById : async (request, response) => {
         try {
-        //on récupère un quiz en fonction de son ID en BDD
+        //on récupère un cocktail en fonction de son ID en BDD
         const id = parseInt(request.params.id, 10);
         const theCocktail = await Cocktail.findOneById(id);
 
@@ -77,7 +76,7 @@ const cocktailController = {
             const id = parseInt(request.params.id, 10);
             const theCocktail = await Cocktail.findOneById(id);
 
-            const { name, ingredients, instructions, glass, picturesLink } = request.body;
+            const { name, ingredients, instructions, glass, picturesLink, alcoolTagId } = request.body;
     
             //si aucun cocktail trouvé avec cet ID => message d'erreur
             if (!theCocktail.id) {
@@ -98,6 +97,9 @@ const cocktailController = {
             }
             if (picturesLink) {
             theCocktail.picturesLink = picturesLink;
+            }
+            if (alcoolTagId) {
+            theCocktail.alcoolTagId = alcoolTagId;
             }
 
             //on envoie les modifications en BDD
