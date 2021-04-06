@@ -13,10 +13,10 @@ DROP TABLE IF EXISTS "user_made_cocktails" CASCADE;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "cocktails" (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "name" text NOT NULL,
+  "name" text NOT NULL UNIQUE,
   "instructions" text NOT NULL,
   "glass" text NOT NULL,
-  "pictures_link" text
+  "pictures_link" text NOT NULL
 );
 
 -- -----------------------------------------------------
@@ -24,8 +24,7 @@ CREATE TABLE IF NOT EXISTS "cocktails" (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "ingredients" (
   "id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  "name" text NOT NULL,
-  "type" text
+  "name" text NOT NULL
 );
 
 -- -----------------------------------------------------

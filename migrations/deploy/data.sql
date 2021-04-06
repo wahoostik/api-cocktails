@@ -11,13 +11,13 @@ INSERT INTO "cocktails" ("name", "instructions", "glass", "pictures_link") VALUE
 'Verre Irish Coffee',
 'https://www.marmiton.org/recettes/recette_irish-coffee-irlande_12137.aspx#d44585-p1');
 
-INSERT INTO "ingredients" ("name","type") VALUES
-('Whisky', 'Alcool'),
-('Café', 'Boisson énergisante stimulante'),
-('Cacao', 'Amande des fèves de cacao fermentées et torréfiées'),
-('Crème Chantilly', 'Crème fouettée sucrée'),
-('Sucre', 'Betterave sucrière'),
-('Sucre de canne', 'Canne à sucre');
+INSERT INTO "ingredients" ("name") VALUES
+('Whisky'),
+('Café'),
+('Cacao'),
+('Crème Chantilly'),
+('Sucre'),
+('Sucre de canne');
 
 INSERT INTO "user" ("email", "firstname", "lastname", "password") VALUES
 ('azerty@gmail.com', 'tony', 'laperche', 'lesuperpassword');
